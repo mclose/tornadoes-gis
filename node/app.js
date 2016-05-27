@@ -3,6 +3,11 @@ var app = express();
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 
+/*
+ * Change the lat and lng coordincates to re-center the map on a new data set.
+ * Chagne the json variable in the route to point to new GeoJSON data.
+ */
+
 app.get('/counties', function (req, res) {
   res.render('map', { mapTitle: 'counties', lat: '32.75', lng: '-97.25', zoom: '6', json: 'us_counties_mapshaper.json' });
 });
